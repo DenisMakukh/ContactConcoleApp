@@ -76,7 +76,7 @@ class Contacts:
         if fio[2] != None:
             if fio[0] != None or fio[1] != None:
                 for id in sp:
-                    if fio[2] != self.baza[2][id]:
+                    if fio[2] != self.baza[3][id]:
                         sp.remove(id)
             else:
                 for i in range(len(self.baza[3])):
