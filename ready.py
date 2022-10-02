@@ -61,26 +61,26 @@ class Contacts:
         sp = []
         if fio[0] != None:
             for i in range(len(self.baza[1])):
-                if fio[0] == self.baza[1][i]:
+                if fio[0].lower() == self.baza[1][i].lower():
                     sp.append(self.baza[0][i] - 1)
         if fio[1] != None:
             if fio[0] != None:
                 for id in sp:
-                    if fio[1] != self.baza[2][id]:
+                    if fio[1].lower() != self.baza[2][id].lower():
                         sp.remove(id)
             else:
                 for i in range(len(self.baza[2])):
-                    if fio[1] == self.baza[2][i]:
+                    if fio[1].lower() == self.baza[2][i].lower():
                         sp.append(self.baza[0][i] - 1)
 
         if fio[2] != None:
             if fio[0] != None or fio[1] != None:
                 for id in sp:
-                    if fio[2] != self.baza[3][id]:
+                    if fio[2].lower() != self.baza[3][id].lower():
                         sp.remove(id)
             else:
                 for i in range(len(self.baza[3])):
-                    if fio[2] == self.baza[3][i]:
+                    if fio[2].lower() == self.baza[3][i].lower():
                         sp.append(self.baza[0][i] - 1)
 
         if len(sp) == 0:
