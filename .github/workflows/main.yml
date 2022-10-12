@@ -1,0 +1,22 @@
+name: my-tests
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+      
+jobs:
+ test_my_code:
+    runs-on   : ubuntu-latest
+    
+    steps     :
+      - name   : Git-Clone-my-repo
+        uses   : actions/checkout@v3
+      - run    : |
+         cd $GITHUB_WORKSPACE
+         python3 -m unittest test_tz2
